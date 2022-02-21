@@ -14,15 +14,15 @@ class _MainhomepageState extends State<Mainhomepage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
         primarySwatch: Colors.brown
       ),
       home: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBar(
-            backgroundColor: Colors.orange,
+            backgroundColor: const Color(0xf56b25),
             elevation: null,
              actions: [
                Padding(
@@ -90,7 +90,7 @@ class _MainhomepageState extends State<Mainhomepage> {
           child: Container(
             child: Column(
               children: [
-                SizedBox(height: 15,),
+                SizedBox(height: 2,),
                 CarouselSlider(
                     items: [
                       Container(
@@ -110,7 +110,6 @@ class _MainhomepageState extends State<Mainhomepage> {
                       ),
                     ],
                     options: CarouselOptions(
-
                       autoPlay: true,
                       autoPlayInterval:const Duration(seconds: 3),
                       pauseAutoPlayOnTouch: true,
@@ -127,76 +126,96 @@ class _MainhomepageState extends State<Mainhomepage> {
                       Column(
                           children: [
                             Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.lightBlue,
+                              ),
                                 child: IconButton(
                                   icon: Icon(
                                     Icons.category_outlined,
                                     color: Colors.pink,
                                   ),
-                                  iconSize: 65,
+                                  iconSize: 50,
                                   splashColor: Colors.orange,
                                   onPressed: () {},
                                 ),),
                             Text("All Category")
                           ]
                       ),
-                      SizedBox(width: 35,),
+                      SizedBox(width: 40,),
                       Column(
                           children: [
                             Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey,
+                              ),
                               child: IconButton(
                                 icon: Icon(
                                   Icons.list_alt,
                                   color: Colors.pink,
                                 ),
-                                iconSize: 65,
+                                iconSize: 50,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
                             Text("Grocery")
                           ]
                       ),
-                      SizedBox(width: 35,),
+                      SizedBox(width: 40,),
                       Column(
                           children: [
                             Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.yellowAccent,
+                              ),
                               child: IconButton(
                                 icon: Icon(
                                   Icons.settings_system_daydream_outlined,
-                                  color: Colors.pink,
+                                  // color: Colors.pink,
                                 ),
-                                iconSize: 65,
+                                iconSize: 50,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
                             Text("Fashon")
                           ]
                       ),
-                      SizedBox(width: 35,),
+                      SizedBox(width: 40,),
                       Column(
                           children: [
                             Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.pink,
+                              ),
                               child: IconButton(
                                 icon: Icon(
                                   Icons.one_k,
-                                  color: Colors.pink,
+                                  // color: Colors.pink,
                                 ),
-                                iconSize: 65,
+                                iconSize: 50,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
                             Text("jwellery")
                           ]
                       ),
-                      SizedBox(width: 35,),
+                      SizedBox(width: 40,),
                       Column(
                           children: [
                             Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.lightBlue,
+                              ),
                               child: IconButton(
                                 icon: Icon(
                                   Icons.category_outlined,
                                   color: Colors.pink,
                                 ),
-                                iconSize: 65,
+                                iconSize: 50,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
@@ -228,6 +247,26 @@ class _MainhomepageState extends State<Mainhomepage> {
                 ),
                 Container(
                   child: Image.asset('assets/images/home1.jpg',),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: Row(
+                    children: [
+                      Container(
+                          width: 100,
+                          height: 100,
+                          child: Image.asset('assets/images/profile.jpg')),
+                      Column(
+                        children: [
+                          Text("New Fashion Shop",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                          Text("121 king street,new york,USA"),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Image.asset('assets/images/shop1.jpg',),
                 ),
                 Container(
                   color: Colors.white,

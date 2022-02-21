@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'Homescreen.dart';
+import 'mainintropage.dart';
 
 class Home_Page extends StatefulWidget {
   const Home_Page({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _Home_PageState extends State<Home_Page> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                    SplashScreen()
+                    Mainintro()
             )
         )
     );
