@@ -18,53 +18,68 @@ class _login1State extends State<login1> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.orange,
-          height: 844,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/back1.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          // color: Colors.orange,
+          height: MediaQuery.of(context).size.height,
           child: Center(
             child: Stack(
               children: [
-                SizedBox(height: 100,),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(10),
                   alignment: Alignment.center,
                   child: Column(
                     children:[
+                      SizedBox(height: 100,),
                       Container(
-                          padding: const EdgeInsets.all(5),
-                          child: const Text("Login",style: const TextStyle(fontSize: 50),)),
-                      const Text("Login to your account"),
-                      const SizedBox(height: 10,),
+                          padding: const EdgeInsets.all(2),
+                          child: const Text("LOG IN",style: const TextStyle(fontSize: 45,color: Colors.white),)),
+                      const Text("Log in to your account",style: TextStyle(fontSize: 18,color: Colors.white),),
+                      const SizedBox(height: 50,),
                       Container(
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all( Radius.circular(20),),
                           color: Colors.white,
+                          boxShadow: [
+                          BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 1.0,
+                          spreadRadius: 0.0,
+                          offset: Offset(0.0, 0.0,), // shadow direction: bottom right
+                        )
+                          ]
                         ),
                         width: 370,
-                        height: 350,
+                        height: 380,
                           child: Column(
                             children: [
-                              SizedBox(height: 50,),
+                              SizedBox(height: 30,),
                               Container(
                                 padding: EdgeInsets.all(15),
                                 child: TextFormField(
                                   decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
-                                      prefixIcon: Icon( Icons.account_box),
-                                    labelText: 'User name',
+                                      prefixIcon: Icon(
+                                        Icons.account_box,),
+                                    labelText: 'User Name',
                                     hintText: 'Your name'
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 15,),
+                              const SizedBox(height: 20,),
                               Container(
-                                padding: EdgeInsets.all(12),
+                                padding: EdgeInsets.all(15),
                                 child: TextFormField(
                                   obscureText: true,
                                   decoration: const InputDecoration(
                                       border: OutlineInputBorder(),
                                       prefixIcon: Icon( Icons.lock_outline),
                                       labelText: 'Account password',
-                                      hintText: 'Enter password'
+                                      hintText: 'Password'
                                   ),
                                 ),
                               ),
@@ -74,12 +89,18 @@ class _login1State extends State<login1> {
                                       style: TextButton.styleFrom(primary: Colors.black),
                                       onPressed: (){
                                         Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgotpage()));
-                                      }, child: const Text("Forgot password?"))),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(primary: Colors.blue),
-                                  onPressed: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Mainhomepage()));
-                                  }, child: const Text("Login")),
+                                      },
+                                      child: Text("Forgot password?",style: TextStyle(fontSize: 17),))),
+                              SizedBox(height: 12,),
+                              Container(
+                                width: 350,
+                                height: 55,
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(primary: Colors.blueAccent),
+                                    onPressed: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Mainhomepage()));
+                                    }, child: const Text("LOG IN",style: TextStyle(fontSize: 20),)),
+                              ),
                             ],
                           ),
                       ),
@@ -87,14 +108,13 @@ class _login1State extends State<login1> {
                     ],
                   ),
                 ),
-                SizedBox(height: 220,),
                 Positioned(
                   top: 800,
                   left: 5,
                   child: Container(
                     decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all( Radius.circular(55),),
-                      color: Colors.blue,
+                        borderRadius: BorderRadius.all( Radius.circular(80),),
+                      color: Colors.blueAccent,
                     ),
                     width: 400,
                     height: 150,
@@ -104,7 +124,7 @@ class _login1State extends State<login1> {
                           style: TextButton.styleFrom(primary: Colors.white),
                           onPressed: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=> Sign_up()));
-                          }, child: Text("Don't you have an accont?Sign up Now!",style: TextStyle(fontSize: 18),))),
+                          }, child: Text("Don't you have an accont?Sign up Now!",style: TextStyle(fontSize: 15,),))),
                 ),
               ],
             ),

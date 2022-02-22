@@ -14,23 +14,36 @@ class _Sign_upState extends State<Sign_up> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.orange,
-          height: 850,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/back1.png"),
+              fit: BoxFit.cover,),
+              color: Colors.orange,
+          ),
+          height: MediaQuery.of(context).size.height,
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 45,),
+                SizedBox(height: 75,),
                 Container(
-                    child: const Text("Sign up",style: const TextStyle(fontSize: 38),)),
-                const Text("Register your account"),
-                SizedBox(height: 15,),
+                    child: const Text("SIGN UP",style: const TextStyle(fontSize: 42,color: Colors.white),)),
+                const Text("Register your Driver Account",style: TextStyle(color: Colors.white,fontSize: 18),),
+                SizedBox(height: 25,),
                 Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all( Radius.circular(20),),
                     color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 1.5,
+                          spreadRadius: 0.0,
+                          offset: Offset(0.0, 0.0,), // shadow direction: bottom right
+                        )
+                      ]
                   ),
                   width: 380,
-                  height: 670,
+                  height: 665,
                   padding: const EdgeInsets.all(20),
                   alignment: Alignment.center,
                   child: Column(
@@ -114,12 +127,12 @@ class _Sign_upState extends State<Sign_up> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 18,),
+                      SizedBox(height: 30,),
                       Container(
                         height: 50,
-                        width: 120,
+                        width: 320,
                         child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(primary: Colors.blue),
+                            style: ElevatedButton.styleFrom(primary: Colors.blueAccent),
                             onPressed: (){}, child: const Text("Sign up")),
                       ),
                    ],

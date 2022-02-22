@@ -1,8 +1,9 @@
-import 'package:layout/pages/Homescreen.dart';
+import 'package:layout/pages/Navigate_Category.dart';
 import 'package:layout/pages/Profile_edit.dart';
 import 'package:layout/pages/Splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/pages/mainhomescreen.dart';
+import 'package:layout/pages/mainintropage.dart';
 import 'package:layout/pages/myprofile.dart';
 import 'package:layout/pages/verification.dart';
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green
       ),
       debugShowCheckedModeBanner: false,
-      home: Mainhomepage(),
+      home: Bottumnavigation(),
     );
   }
 }
