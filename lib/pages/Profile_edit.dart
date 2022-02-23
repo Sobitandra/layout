@@ -13,19 +13,14 @@ class Profile_page extends StatefulWidget {
 class _Profile_pageState extends State<Profile_page> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xfff56b25),
+        centerTitle: true,
+        title: const Text("Edit Profile"),
+        elevation: 0.0,
       ),
-      home:Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xfff56b25),
-          centerTitle: true,
-          title: const Text("Edit Profile"),
-          elevation: 0.0,
-        ),
-        body: SingleChildScrollView(
+      body: SingleChildScrollView(
           child: Container(
             height: 756,
             decoration: const BoxDecoration(
@@ -42,20 +37,20 @@ class _Profile_pageState extends State<Profile_page> {
                     const SizedBox(height: 20,),
                     // Image.asset('assets/images/profile.jpg')
                     Container(
-                      width: 180,
-                      height: 180,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xfff56b25),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.white,
-                              blurRadius: 0.0,
-                              spreadRadius: 5.0,
-                              offset: const Offset(0.0, 0.0,), // shadow direction: bottom right
-                            )
-                          ]
-                      ),
+                        width: 180,
+                        height: 180,
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xfff56b25),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white,
+                                blurRadius: 0.0,
+                                spreadRadius: 5.0,
+                                offset: const Offset(0.0, 0.0,), // shadow direction: bottom right
+                              )
+                            ]
+                        ),
                         alignment: Alignment.center,
                         child: const Icon(Icons.person_sharp,color: Colors.white ,size: 152,)),
                     SizedBox(height: 15,),
@@ -141,14 +136,14 @@ class _Profile_pageState extends State<Profile_page> {
                   ],
                 ),
                 Positioned(
-                  top: 150,
+                    top: 150,
                     left: 255,
                     child: Container(
-                      width: 30,
+                        width: 30,
                         height: 30,
                         decoration: const BoxDecoration(
-                          color: Color(0xfff56b25),
-                          shape: BoxShape.circle,
+                            color: Color(0xfff56b25),
+                            shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black,
@@ -163,7 +158,6 @@ class _Profile_pageState extends State<Profile_page> {
               ],
             ),
           )
-        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'Store_page.dart';
 import 'myprofile.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
@@ -23,49 +24,38 @@ class _MainhomepageState extends State<Mainhomepage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.brown
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(45.0),
+        child: AppBar(
+          backgroundColor: const Color(0xfff56b25),
+          elevation: 0.0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(0),
+              child: IconButton( onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const My_Profile()));
+              }, icon: const Icon(Icons.person),),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+              child: IconButton( onPressed: () { }, icon: const Icon(Icons.shopping_cart),),
+            )
+          ],
+        ),
       ),
-      home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(45.0),
-          child: AppBar(
-            backgroundColor: const Color(0xfff56b25),
-            elevation: 0.0,
-             actions: [
-               Padding(
-                 padding: const EdgeInsets.all(0),
-                 child: IconButton( onPressed: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const My_Profile()));
-                 }, icon: const Icon(Icons.person),),
-               ),
-               Padding(
-                 padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-                 child: IconButton( onPressed: () { }, icon: const Icon(Icons.shopping_cart),),
-               )
-             ],
-            // title: TextFormField(
-            //   style: const TextStyle(fontSize: 15),
-            //   decoration: const InputDecoration(
-            //     hintText: "Search",
-            //     prefixIcon: Icon(Icons.search),
-            //   ),),
-          ),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: const [
-              DrawerHeader(
-                  decoration: BoxDecoration(
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            DrawerHeader(
+                decoration: BoxDecoration(
                     color: Color(0xfff56b25)
-                  ),
-                  child: Text("hellow"))
-            ],
-          ),
+                ),
+                child: Text("hellow"))
+          ],
         ),
-        body: SingleChildScrollView(
+      ),
+      body: SingleChildScrollView(
           child: Container(
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -85,7 +75,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                           child: DropdownButton(
                               style: const TextStyle(fontSize: 15,color: Colors.black,),
                               iconSize: 0.0,
-                               value: dropdownvalue,
+                              value: dropdownvalue,
                               items: items.map((String items) {
                                 return DropdownMenuItem(
                                   value: items,
@@ -95,10 +85,10 @@ class _MainhomepageState extends State<Mainhomepage> {
                                 );
                               }).toList(),
                               onChanged: (String? newvalue){
-                              setState(() {
-                                dropdownvalue=newvalue!;
-                              });
-      }
+                                setState(() {
+                                  dropdownvalue=newvalue!;
+                                });
+                              }
                           ),
                         ),
                       ),
@@ -111,11 +101,11 @@ class _MainhomepageState extends State<Mainhomepage> {
                         ),
                         width: 260,
                         child: TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: "Search for products",
-                          border: InputBorder.none,
-                          prefixIcon: const Icon(Icons.search)
-                        ),
+                          decoration: const InputDecoration(
+                              labelText: "Search for products",
+                              border: InputBorder.none,
+                              prefixIcon: Icon(Icons.search)
+                          ),
                         ),
                       )
                     ],
@@ -123,21 +113,11 @@ class _MainhomepageState extends State<Mainhomepage> {
                 ),
                 CarouselSlider(
                     items: [
-                      Container(
-                        child: Image.asset('assets/images/App10.jpg'),
-                      ),
-                      Container(
-                        child: Image.asset('assets/images/App11.jpg'),
-                      ),
-                      Container(
-                        child: Image.asset('assets/images/App13.jpg'),
-                      ),
-                      Container(
-                        child: Image.asset('assets/images/App12.jpg'),
-                      ),
-                      Container(
-                        child: Image.asset('assets/images/App11.jpg'),
-                      ),
+                      Image.asset('assets/images/App10.jpg'),
+                      Image.asset('assets/images/App11.jpg'),
+                      Image.asset('assets/images/App13.jpg'),
+                      Image.asset('assets/images/App12.jpg'),
+                      Image.asset('assets/images/App11.jpg'),
                     ],
                     options: CarouselOptions(
                       autoPlay: true,
@@ -166,15 +146,15 @@ class _MainhomepageState extends State<Mainhomepage> {
                                 shape: BoxShape.circle,
                                 color: Color(0xff8592e8),
                               ),
-                                child: IconButton(
-                                  icon: const Icon(
-                                    Icons.category_outlined,
-                                    color: Color(0xff0b3880),
-                                  ),
-                                  iconSize: 45,
-                                  splashColor: Colors.orange,
-                                  onPressed: () {},
-                                ),),
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.category_outlined,
+                                  color: Color(0xff0b3880),
+                                ),
+                                iconSize: 40,
+                                splashColor: Colors.orange,
+                                onPressed: () {},
+                              ),),
                             const Text("All Category")
                           ]
                       ),
@@ -192,7 +172,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                                 icon: const Icon(CupertinoIcons.square_favorites,
                                   color: Colors.black,
                                 ),
-                                iconSize: 45,
+                                iconSize: 40,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
@@ -213,7 +193,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                                 icon: const Icon(CupertinoIcons.f_cursive_circle,
                                   // color: Colors.pink,
                                 ),
-                                iconSize: 45,
+                                iconSize: 40,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
@@ -256,7 +236,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                                   Icons.category_outlined,
                                   color: Color(0xff0b3880),
                                 ),
-                                iconSize: 45,
+                                iconSize: 40,
                                 splashColor: Colors.orange,
                                 onPressed: () {},
                               ),),
@@ -266,39 +246,44 @@ class _MainhomepageState extends State<Mainhomepage> {
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Container(
-                        child: Image.asset('assets/images/App5.jpg',),
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
-                          color: Colors.white,
+                InkWell(
+                  onTap: (){
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=> Store_Pages()),);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Image.asset('assets/images/App5.jpg',),
                         ),
-                        child: Row(
-                          children: [
-                            Container(
+                        Container(
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
                                 width: 100,
                                 height: 100,
                                 child: const Icon(CupertinoIcons.cart_fill_badge_plus,size: 60,),
-                            ),
-                            Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text("New Fashion Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-                                  SizedBox(height: 8,),
-                                  Text("121 king street,new york,USA"),
-                                ],
                               ),
-                            )
-                          ],
+                              Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text("New Fashion Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                                    SizedBox(height: 8,),
+                                    Text("121 king street,new york,USA"),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Container(
@@ -607,9 +592,8 @@ class _MainhomepageState extends State<Mainhomepage> {
               ],
             ),
           )
-        ),
-
       ),
+
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'ContactTAB.dart';
@@ -23,8 +24,6 @@ class _Store_PagesState extends State<Store_Pages> {
     'Jwellery',
     'Kids',
   ];
-
-  // TabController _tabController = TabController(length: 3, vsync: );
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +68,7 @@ class _Store_PagesState extends State<Store_Pages> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            height: 1200,
+            // height: double.maxFinite,
             width: MediaQuery.of(context).size.width ,
             child: Stack(
               children: [
@@ -133,6 +132,7 @@ class _Store_PagesState extends State<Store_Pages> {
                         child: const TabBar(
                           indicatorColor: Colors.blueAccent,
                           labelPadding: EdgeInsets.all(5),
+                          isScrollable: false,
                           tabs: [
                             Text("Products",style: TextStyle(color: Colors.blueAccent,fontSize: 18),),
                             Text("Review",style: TextStyle(color: Colors.blueAccent,fontSize: 18),),
@@ -141,10 +141,11 @@ class _Store_PagesState extends State<Store_Pages> {
                         ),
                       ),
                       Container(
+                        height: 1020,
                         width: double.maxFinite,
-                        height: 300,
-                        child: TabBarView(children: [
-                          Text("kjbsd"),
+                        child: const TabBarView(
+                            children: [
+                              ProductTAb(),
                           Text("ejbcje"),
                           Text("ecjhbehjc")
                         ]),
@@ -152,9 +153,6 @@ class _Store_PagesState extends State<Store_Pages> {
                     ],
                   ),
                 ),
-                // Container(
-                //   child: TabBarNav(),
-                // ),
                 Positioned(
                   top: 270,
                   left: 30,

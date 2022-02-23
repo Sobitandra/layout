@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:ui';
 import 'Forgotpassword.dart';
+import 'NavigationBarButton.dart';
 import 'Sign_up.dart';
 import 'mainhomescreen.dart';
 
@@ -98,7 +99,7 @@ class _login1State extends State<login1> {
                                 child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(primary: Colors.blueAccent),
                                     onPressed: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Mainhomepage()));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Bottumnavigation()));
                                     }, child: const Text("LOG IN",style: TextStyle(fontSize: 20),)),
                               ),
                             ],

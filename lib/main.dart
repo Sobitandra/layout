@@ -1,4 +1,4 @@
-import 'package:layout/pages/Navigate_Category.dart';
+import 'package:layout/pages/NavigationBarButton.dart';
 import 'package:layout/pages/Profile_edit.dart';
 import 'package:layout/pages/Splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green
       ),
       debugShowCheckedModeBanner: false,
-      home: Bottumnavigation(),
+      home: Home_Page(),
     );
   }
 }
