@@ -1,5 +1,10 @@
+import 'package:layout/pages/Checkout.dart';
+import 'package:layout/pages/Delivary_Details.dart';
+import 'package:layout/pages/MY_Wallet.dart';
 import 'package:layout/pages/NavigationBarButton.dart';
+import 'package:layout/pages/PRO.dart';
 import 'package:layout/pages/Profile_edit.dart';
+import 'package:layout/pages/Shipping.dart';
 import 'package:layout/pages/Splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/pages/mainhomescreen.dart';
@@ -16,10 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          primarySwatch: Colors.green
       ),
       debugShowCheckedModeBanner: false,
-      home: Home_Page(),
+      home: Delivary_Details(),
     );
   }
 }

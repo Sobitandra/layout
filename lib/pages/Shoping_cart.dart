@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_button/counter_button.dart';
 
+import 'Checkout.dart';
+
 class Shoping_cart extends StatefulWidget {
   const Shoping_cart({Key? key}) : super(key: key);
 
@@ -113,7 +115,9 @@ class _Shoping_cartState extends State<Shoping_cart> {
                           elevation: 0.0,
                         ),
                         child: const Text("Apply"),
-                      onPressed: (){},),
+                      onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> Checkout()));
+                      },),
                     )
                   ],
                 ),

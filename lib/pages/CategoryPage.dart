@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Address.dart';
+import 'Checkout.dart';
+
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
 
@@ -57,7 +60,9 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Checkout()));
+                },
                 child: Container(
                   height: 100,
                   color: Colors.white,

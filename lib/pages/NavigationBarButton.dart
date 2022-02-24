@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'CategoryPage.dart';
 import 'Checkout.dart';
+import 'MY_Wallet.dart';
 import 'Profile_edit.dart';
 import 'Shoping_cart.dart';
 import 'Store_page.dart';
@@ -24,7 +25,7 @@ class _BottumnavigationState extends State<Bottumnavigation> {
     CategoryPage(),
     Store_Pages(),
     Shoping_cart(),
-    Checkout(),
+    Mywallet(),
   ];
   int currentIndex=0;
 
