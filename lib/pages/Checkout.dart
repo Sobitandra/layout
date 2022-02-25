@@ -59,8 +59,16 @@ late TabController _tabController;
                           width:95,
                           height: 42,
                             child: Text("Address"),),
-                        Text("Shipping"),
-                        Text("Payment")
+                        Container(
+                          alignment: Alignment.center,
+                          width:95,
+                          height: 42,
+                          child: Text("Shipping"),),
+                        Container(
+                          alignment: Alignment.center,
+                          width:95,
+                          height: 42,
+                          child: Text("Payment")),
                       ]),
                 ),
                 Container(
@@ -68,7 +76,7 @@ late TabController _tabController;
                    height: 630,
                   child: TabBarView(
                     controller: _tabController,
-                    children: [
+                    children: const [
                       Address(),
                       Shipping(),
                       Payment()

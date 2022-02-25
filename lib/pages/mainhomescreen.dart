@@ -22,6 +22,7 @@ class _MainhomepageState extends State<Mainhomepage> {
     'Kids',
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,8 +129,69 @@ class _MainhomepageState extends State<Mainhomepage> {
                 const SizedBox(height: 10,),
                 Container(
                     width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
-                    child: const Text("Category",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text("Category",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                        TextButton(
+                          onPressed: () {
+                            showModalBottomSheet<dynamic>(
+                              isScrollControlled: true,
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  padding: EdgeInsets.only(left: 23,right: 20,top: 20),
+                                  height: 700,
+                                  color: Colors.white,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('Excotic Pizza',style: TextStyle(
+                                              fontSize: 20,fontWeight: FontWeight.bold
+                                            ),),
+                                            IconButton(onPressed: ()=> Navigator.pop(context), icon: Icon(Icons.highlight_remove,size: 32,))
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 300,
+                                          child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')),
+                                      Divider(
+                                        thickness: 1,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text('Variation',style: TextStyle(
+                                          fontSize: 20,fontWeight: FontWeight.bold
+                                      ),),
+                                      Container(
+                                          width: 300,
+                                          child: Text('Please select any one option.')),
+                                      TextButton(
+                                          onPressed: (){},
+                                        child: Text('Small', style: TextStyle(color:Colors.green, fontSize: 22),)
+                                        ),
+                                      TextButton(
+                                          onPressed: (){},
+                                          child: Text('Medium', style: TextStyle(color:Colors.green, fontSize: 22),)
+                                      ),
+                                      Text('Choice',style: TextStyle(
+                                          fontSize: 30,fontWeight: FontWeight.bold
+                                      ),),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          }, child: Text("FIlter",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
+                      ],
+                    )),
                 Container(
                   height: 100,
                   padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),

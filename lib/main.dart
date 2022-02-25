@@ -11,6 +11,8 @@ import 'package:layout/pages/mainhomescreen.dart';
 import 'package:layout/pages/mainintropage.dart';
 import 'package:layout/pages/myprofile.dart';
 import 'package:layout/pages/verification.dart';
+
+import 'External/Calenderpage.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       ),
       debugShowCheckedModeBanner: false,
-      home: Delivary_Details(),
+      home: Home_Page(),
     );
   }
 }
