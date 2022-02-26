@@ -10,6 +10,18 @@ class Calender extends StatefulWidget {
 }
 
 class _CalenderState extends State<Calender> {
+  bool Buttoncolor = false;
+  bool Buttoncolor1 = false;
+  bool Buttoncolor2= false;
+  bool Buttoncolor3 = false;
+  bool Buttoncolor4 = false;
+  bool Buttoncolor5 = false;
+  bool Buttoncolor6 = false;
+  bool Buttoncolor7 = false;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +73,7 @@ class _CalenderState extends State<Calender> {
                 child: Column(
                   children: [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(55),topRight: Radius.circular(55))
                       ),
@@ -71,6 +83,146 @@ class _CalenderState extends State<Calender> {
                             firstDay: DateTime(2020),
                             lastDay: DateTime(2023),
                         )),
+                    Container(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      Buttoncolor=!Buttoncolor;
+                                    });
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Buttoncolor ? Color(0xffea1a20) : Color(0xffffffff),
+                                    elevation: 0.0
+                                  ),
+                                  child: Container(
+                                child: Text('8:30 AM',style: TextStyle(
+                                  color: Buttoncolor ? Colors.white : Colors.black
+                                ),),
+                              )),
+                              ElevatedButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      Buttoncolor1=!Buttoncolor1;
+                                    });
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Buttoncolor1 ? Color(0xffea1a20) : Color(0xffffffff),
+                                      elevation: 0.0
+                                  )
+                                  child: Container(
+                                    child: Text('9:00 AM',style: TextStyle(
+                                        color: Buttoncolor1 ? Colors.white : Colors.black
+                                    ),),
+                                  )),
+                              ElevatedButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      Buttoncolor2=!Buttoncolor2;
+                                    });
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Buttoncolor2 ? Color(0xffea1a20) : Color(0xffffffff),
+                                      elevation: 0.0
+                                  ),
+                                  child: Container(
+                                    child: Text('9:30 AM',style: TextStyle(
+                                        color: Buttoncolor2 ? Colors.white : Colors.black
+                                    ),),
+                                  )),
+                              ElevatedButton(
+                                  onPressed: (){
+                                    setState(() {
+                                      Buttoncolor3=!Buttoncolor3;
+                                    });
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Buttoncolor3 ? Color(0xffea1a20) : Color(0xffffffff),
+                                      elevation: 0.0
+                                  ),
+                                  child: Container(
+                                    child: Text('10:00 AM',style: TextStyle(
+                                        color: Buttoncolor3 ? Colors.white : Colors.black
+                                    ),),
+                                  )),
+                            ],
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(6),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Buttoncolor=!Buttoncolor;
+                                      });
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Buttoncolor ? Color(0xffea1a20) : Color(0xffffffff),
+                                        elevation: 0.0
+                                    ),
+                                    child: Container(
+                                      child: Text('10:30 AM',style: TextStyle(
+                                          color: Buttoncolor ? Colors.white : Colors.black
+                                      ),),
+                                    )),
+                                ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Buttoncolor=!Buttoncolor;
+                                      });
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Buttoncolor ? Color(0xffea1a20) : Color(0xffffffff),
+                                        elevation: 0.0
+                                    ),
+                                    child: Container(
+                                      child: Text('11:00 AM',style: TextStyle(
+                                          color: Buttoncolor ? Colors.white : Colors.black
+                                      ),),
+                                    )),
+                                ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Buttoncolor=!Buttoncolor;
+                                      });
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Buttoncolor ? Color(0xffea1a20) : Color(0xffffffff),
+                                        elevation: 0.0
+                                    ),
+                                    child: Container(
+                                      child: Text('11:30 AM',style: TextStyle(
+                                          color: Buttoncolor ? Colors.white : Colors.black
+                                      ),),
+                                    )),
+                                ElevatedButton(
+                                    onPressed: (){
+                                      setState(() {
+                                        Buttoncolor=!Buttoncolor;
+                                      });
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Buttoncolor ? Color(0xffea1a20) : Color(0xffffffff),
+                                        elevation: 0.0
+                                    ),
+                                    child: Container(
+                                      child: Text('12:00 AM',style: TextStyle(
+                                          color: Buttoncolor ? Colors.white : Colors.black
+                                      ),),
+                                    )),
+                              ],
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
                     Container(
                       width: 340,
                       height: 45,
