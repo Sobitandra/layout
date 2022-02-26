@@ -141,7 +141,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                               context: context,
                               builder: (BuildContext context) {
                                 return Container(
-                                  padding: EdgeInsets.only(left: 23,right: 20,top: 20),
+                                  padding: const EdgeInsets.only(left: 23,right: 20,top: 20),
                                   height: 700,
                                   color: Colors.white,
                                   child: Column(
@@ -151,37 +151,37 @@ class _MainhomepageState extends State<Mainhomepage> {
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text('Excotic Pizza',style: TextStyle(
+                                            const Text('Excotic Pizza',style: TextStyle(
                                               fontSize: 20,fontWeight: FontWeight.bold
                                             ),),
-                                            IconButton(onPressed: ()=> Navigator.pop(context), icon: Icon(Icons.highlight_remove,size: 32,))
+                                            IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.highlight_remove,size: 32,))
                                           ],
                                         ),
                                       ),
                                       Container(
                                         width: 300,
-                                          child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')),
-                                      Divider(
+                                          child: const Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')),
+                                      const Divider(
                                         thickness: 1,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
-                                      Text('Variation',style: TextStyle(
+                                      const Text('Variation',style: TextStyle(
                                           fontSize: 20,fontWeight: FontWeight.bold
                                       ),),
                                       Container(
                                           width: 300,
-                                          child: Text('Please select any one option.')),
+                                          child: const Text('Please select any one option.')),
                                       TextButton(
                                           onPressed: (){},
-                                        child: Text('Small', style: TextStyle(color:Colors.green, fontSize: 22),)
+                                        child: const Text('Small', style: TextStyle(color:Colors.green, fontSize: 22),)
                                         ),
                                       TextButton(
                                           onPressed: (){},
-                                          child: Text('Medium', style: TextStyle(color:Colors.green, fontSize: 22),)
+                                          child: const Text('Medium', style: TextStyle(color:Colors.green, fontSize: 22),)
                                       ),
-                                      Text('Choice',style: TextStyle(
+                                      const Text('Choice',style: TextStyle(
                                           fontSize: 30,fontWeight: FontWeight.bold
                                       ),),
                                     ],
@@ -189,7 +189,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                                 );
                               },
                             );
-                          }, child: Text("FIlter",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
+                          }, child: const Text("FIlter",style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
                       ],
                     )),
                 Container(
