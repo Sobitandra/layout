@@ -10,15 +10,15 @@ class Mainintro extends StatefulWidget {
   @override
   _MainintroState createState() => _MainintroState();
 }
+class _MainintroState extends State<Mainintro>  with SingleTickerProviderStateMixin  {
 
-final List<String> imgList = [
-  'assets/images/App3.jpg',
-  'assets/images/App2.jpg',
-  'assets/images/App1.jpg'
-];
-int _current = 0;
+  final List<String> imgList = [
+    'assets/images/App3.jpg',
+    'assets/images/App2.jpg',
+    'assets/images/App1.jpg'
+  ];
+  int _current = 0;
 
-class _MainintroState extends State<Mainintro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

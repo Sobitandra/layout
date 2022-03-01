@@ -56,7 +56,6 @@ class _ShippingState extends State<Shipping> {
                         Firstvalue1=value!;
                       });
                     },
-
                     ),
                     Text("Free Shipping (\$10)",style: TextStyle(fontSize: 20,color: Color(0xff0f2154),fontWeight: FontWeight.bold),)
                   ],

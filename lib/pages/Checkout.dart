@@ -20,13 +20,6 @@ late TabController _tabController;
     _tabController = TabController(length: 3 , vsync: this,);
   }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +81,8 @@ late TabController _tabController;
                   width: 320,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: Colors.blueAccent),
-                      onPressed: () => _tabController.animateTo((_tabController.index + 1) % 3), child: const Text("Continue")),
+                      onPressed: () => _tabController.animateTo((_tabController.index + 1) % 3),
+                      child: const Text("Continue")),
                 ),
               ],
             ),

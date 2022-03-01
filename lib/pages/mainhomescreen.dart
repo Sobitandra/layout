@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../widget/Products.dart';
+import 'FilterPage.dart';
 import 'Store_page.dart';
 import 'myprofile.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -21,6 +23,8 @@ class _MainhomepageState extends State<Mainhomepage> {
     'Jwellery',
     'Kids',
   ];
+  final products = Products();
+  bool Firstvalue1 = false;
 
 
   @override
@@ -140,53 +144,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                               isScrollControlled: true,
                               context: context,
                               builder: (BuildContext context) {
-                                return Container(
-                                  padding: const EdgeInsets.only(left: 23,right: 20,top: 20),
-                                  height: 700,
-                                  color: Colors.white,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            const Text('Excotic Pizza',style: TextStyle(
-                                              fontSize: 20,fontWeight: FontWeight.bold
-                                            ),),
-                                            IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.highlight_remove,size: 32,))
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        width: 300,
-                                          child: const Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.')),
-                                      const Divider(
-                                        thickness: 1,
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      const Text('Variation',style: TextStyle(
-                                          fontSize: 20,fontWeight: FontWeight.bold
-                                      ),),
-                                      Container(
-                                          width: 300,
-                                          child: const Text('Please select any one option.')),
-                                      TextButton(
-                                          onPressed: (){},
-                                        child: const Text('Small', style: TextStyle(color:Colors.green, fontSize: 22),)
-                                        ),
-                                      TextButton(
-                                          onPressed: (){},
-                                          child: const Text('Medium', style: TextStyle(color:Colors.green, fontSize: 22),)
-                                      ),
-                                      const Text('Choice',style: TextStyle(
-                                          fontSize: 30,fontWeight: FontWeight.bold
-                                      ),),
-                                    ],
-                                  ),
-                                );
+                                return Filter();
                               },
                             );
                           }, child: const Text("FIlter",style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
@@ -305,6 +263,8 @@ class _MainhomepageState extends State<Mainhomepage> {
                             const Text("All Category",)
                           ]
                       ),
+                      const SizedBox(width: 40,),
+                      CommonCategorytype( 'example' , Icons.category_outlined)
                     ],
                   ),
                 ),
@@ -321,23 +281,34 @@ class _MainhomepageState extends State<Mainhomepage> {
                         ),
                         Container(
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20)),
                             color: Colors.white,
                           ),
                           child: Row(
                             children: [
                               Container(
-                                width: 100,
-                                height: 100,
-                                child: const Icon(CupertinoIcons.cart_fill_badge_plus,size: 60,),
+                                margin: EdgeInsets.only(right: 16,left: 15),
+                                width: 65,
+                                height: 90,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                  border: Border.all(color: Colors.white,style: BorderStyle.solid),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/images/Aprofile.jfif',)
+                                  )
+                                ),
                               ),
                               Container(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: const [
-                                    Text("New Fashion Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                                    Text("New Fashion Shop",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
                                     SizedBox(height: 8,),
-                                    Text("121 king street,new york,USA"),
+                                    Text("121 king street,new york,USA",style: TextStyle(color: Colors.grey),),
                                   ],
                                 ),
                               )
@@ -364,17 +335,26 @@ class _MainhomepageState extends State<Mainhomepage> {
                         child: Row(
                           children: [
                             Container(
-                              width: 100,
-                              height: 100,
-                              child: const Icon(CupertinoIcons.cart_fill_badge_plus,size: 60,),
+                              margin: EdgeInsets.only(right: 16,left: 15),
+                              width: 65,
+                              height: 90,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                  border: Border.all(color: Colors.white,style: BorderStyle.solid),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images/Aprofile.jfif',)
+                                  )
+                              ),
                             ),
                             Container(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
-                                  Text("New Fashion Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                                  Text("New Fashion Shop",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
                                   SizedBox(height: 8,),
-                                  Text("121 king street,new york,USA"),
+                                  Text("121 king street,new york,USA",style: TextStyle(color: Colors.grey),),
                                 ],
                               ),
                             )
@@ -400,17 +380,26 @@ class _MainhomepageState extends State<Mainhomepage> {
                         child: Row(
                           children: [
                             Container(
-                              width: 100,
-                              height: 100,
-                              child: const Icon(CupertinoIcons.cart_fill_badge_plus,size: 60,),
+                              margin: EdgeInsets.only(right: 16,left: 15),
+                              width: 65,
+                              height: 90,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                  border: Border.all(color: Colors.white,style: BorderStyle.solid),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/images/Aprofile.jfif',)
+                                  )
+                              ),
                             ),
                             Container(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
-                                  Text("New Fashion Shop",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                                  Text("New Fashion Shop",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),),
                                   SizedBox(height: 8,),
-                                  Text("121 king street,new york,USA"),
+                                  Text("121 king street,new york,USA",style: TextStyle(color: Colors.grey),),
                                 ],
                               ),
                             )
@@ -425,7 +414,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                   padding: const EdgeInsets.only(left: 20),
                   child: const Text("Popular Deals",style: TextStyle(fontSize: 20),),
                 ),
-                Container(
+                /*Container(
                   padding: const EdgeInsets.all(20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -648,7 +637,21 @@ class _MainhomepageState extends State<Mainhomepage> {
                       ),
                     ],
                   ),
-                ),
+                ),*/
+               GridView.builder(
+                 physics: ScrollPhysics(),
+                 itemCount: 6,
+                 itemBuilder: (BuildContext context, int index) {
+                   return Products();
+                 },
+                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                     crossAxisCount: 2,
+                     crossAxisSpacing: 12,
+                     childAspectRatio: 0.75
+                 ),
+                 padding: const EdgeInsets.all(10),
+                 shrinkWrap: true,
+               ),
                 Image.asset('assets/images/App17.jpg'),
                 const SizedBox(height: 15,)
               ],
@@ -656,6 +659,30 @@ class _MainhomepageState extends State<Mainhomepage> {
           )
       ),
 
+    );
+  }
+
+  CommonCategorytype(String text , icon ,) {
+    return Column(
+      children: [
+        Container(
+          width: 70,
+          height: 70,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color(0xff8592e8),
+          ),
+          child: IconButton(
+            icon: Icon(
+              icon,
+              color: Color(0xff0b3880),
+            ),
+            iconSize: 40,
+            splashColor: Colors.orange,
+            onPressed: () {},
+          ),),
+        Text(text)
+      ],
     );
   }
 }

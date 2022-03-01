@@ -10,6 +10,7 @@ class Calender extends StatefulWidget {
 }
 
 class _CalenderState extends State<Calender> {
+
   bool Buttoncolor = false;
   bool Buttoncolor1 = false;
   bool Buttoncolor2= false;
@@ -18,7 +19,6 @@ class _CalenderState extends State<Calender> {
   bool Buttoncolor5 = false;
   bool Buttoncolor6 = false;
   bool Buttoncolor7 = false;
-
 
   String dropdownvalue='01';
   String dropdownvalue1='01';
@@ -33,10 +33,7 @@ class _CalenderState extends State<Calender> {
     '08',
     '09',
     '10',
-
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -92,15 +89,19 @@ class _CalenderState extends State<Calender> {
                 child: Column(
                   children: [
                     Container(
-                      // decoration: const BoxDecoration(
-                      //   borderRadius: BorderRadius.only(topLeft: Radius.circular(55),topRight: Radius.circular(55))
-                      // ),
                         child: TableCalendar(
+                          calendarStyle: const CalendarStyle(
+                            todayDecoration: BoxDecoration(
+                              color: Color(0xffea1a20),
+                              shape: BoxShape.circle,
+                            )
+                          ),
                           calendarFormat: CalendarFormat.month,
                             focusedDay: DateTime.now(),
                             firstDay: DateTime(2020),
                             lastDay: DateTime(2023),
-                        )),
+                        ),
+                    ),
                     Container(
                       child: Column(
                         children: [
@@ -119,8 +120,8 @@ class _CalenderState extends State<Calender> {
                                   ),
                                   child: Container(
                                 child: Text('8:30 AM',style: TextStyle(
-                                  color: Buttoncolor ? Colors.white : Colors.black
-                                ),),
+                                  color: Buttoncolor ? Colors.white : Colors.black),
+                                ),
                               )),
                               ElevatedButton(
                                   onPressed: (){

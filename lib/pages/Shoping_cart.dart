@@ -186,18 +186,6 @@ class _Shoping_cartState extends State<Shoping_cart> {
                                 icon:const Icon(Icons.add,size: 25,color: Colors.blueAccent,),),
                             ],
                           )
-                          // Container(
-                          //   child: CounterButton(
-                          //     loading: false,
-                          //     onChange: (int value) {
-                          //       setState(() {
-                          //         countervalus=value;
-                          //       });
-                          //   },
-                          //     count: countervalus,
-                          //     countColor: Colors.blueAccent,
-                          //   ),
-                          // )
                         ],
                       ),
                     )
