@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget/Products.dart';
+import 'chatpage.dart';
 
 enum ordertype { small, medium, large, four }
 
@@ -16,91 +17,39 @@ class _exampleState extends State<example> {
   bool Firstvalue1 = false;
   bool Firstvalue2 = false;
   ordertype? selected = ordertype.small;
+
+  int currentIndex = 0;
+  void onTap (int index){
+  setState(() {
+  currentIndex = index;
+  });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('small'),
-                Row(
-                  children: [
-                    Text('\$249',style: TextStyle(color: Firstvalue1 ? Colors.blueAccent : Colors.black,fontSize: 17),),
-                    Radio(value: ordertype.large, groupValue: selected,
-                        onChanged: (ordertype? value){
-                          setState(() {
-                            selected=value;
-                            Firstvalue1 = !Firstvalue1 ;
-                          });
-                        })
-                  ],
-                ),
-              ],
-            ),//small
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                    onPressed: (){},
-                    child: Text('Medium', style: TextStyle(
-                        color: Firstvalue2 ? Colors.blueAccent: Colors.black, fontSize: 17),)
-                ),
-                Row(
-                  children: [
-                    Text('\$489',style: TextStyle(color: Firstvalue2 ? Colors.blueAccent : Colors.black,fontSize: 17),),
-                    Radio(value: ordertype.four, groupValue: selected,
-                        onChanged: (ordertype? value){
-                      setState(() {
-                        selected=value;
-                        Firstvalue2 = !Firstvalue2 ;
-                      });
-                        })
-                    // Checkbox(
-                    //   checkColor: Colors.white,
-                    //   activeColor: Colors.blue,
-                    //   value: Firstvalue2, onChanged: (value) {
-                    //   setState(() {
-                    //     Firstvalue2=value!;
-                    //   });
-                    // },
-                    // ),
-                  ],
-                ),
-              ],
-            ),//medium
-            ListTile(
-              title: const Text('Lafayette'),
-              trailing: Radio(
-                value: ordertype.small,
-                groupValue: selected,
-                onChanged: (ordertype? value) {
-                  setState(() {
-                    selected = value;
-                  });
-                },
-              ),
+      body: chatpage(),
+      bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.red,
+          unselectedItemColor: Colors.grey.shade600,
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+          type: BottomNavigationBarType.fixed,
+          onTap: onTap,
+          currentIndex: currentIndex,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.message),
+            label: 'Message'
             ),
-        RadioListTile(
-          controlAffinity: ListTileControlAffinity.trailing,
-            
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('small',style:TextStyle(color:selected==ordertype.four? Colors.blueAccent: Colors.black,fontSize: 17 ),),
-                Text('\$249',style:TextStyle(color:selected==ordertype.four? Colors.blueAccent: Colors.black ),),
-              ],
+            BottomNavigationBarItem(
+                icon: Icon(Icons.group),
+                label: 'Group'
             ),
-            value: ordertype.four,
-            groupValue: selected,
-            onChanged: (ordertype? value) { setState(() { selected = value; }); },
-          )
-          ],
-        ),
-      ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded),
+                label: 'Profile'
+            ),
+          ]),
     );
   }
 }

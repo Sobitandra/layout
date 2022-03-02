@@ -640,7 +640,7 @@ class _MainhomepageState extends State<Mainhomepage> {
                 ),*/
                GridView.builder(
                  physics: ScrollPhysics(),
-                 itemCount: 6,
+                 itemCount: 7,
                  itemBuilder: (BuildContext context, int index) {
                    return Products();
                  },

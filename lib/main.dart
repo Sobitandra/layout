@@ -16,8 +16,9 @@ import 'package:layout/widget/Products.dart';
 
 import 'Addtional_pages/Example.dart';
 import 'External/Calenderpage.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
       ),
       debugShowCheckedModeBanner: false,
-      home: Mainintro(),
+      home: example(),
     );
   }
 }
